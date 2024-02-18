@@ -1,0 +1,123 @@
+:root {
+  --size-container: 30rem;
+  --size-container-img: calc(var(--size-container) / 3);
+  --bg-color: #000;
+  --header-height: 5rem;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  width: 100%; height: 100vh;
+}
+.header {
+  width: 100%; height: var(--header-height);
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.title {
+  color: #fff;
+}
+.main {
+  width: 100%; height: calc(100vh - var(--header-height));
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hitBox {
+  padding: 1rem;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+.container {
+  width: var(--size-container);
+  height: var(--size-container);
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--bg-color);
+  position: relative;
+}
+.container::before {
+  content: "";
+  width: calc(100% + 1rem);
+  height: calc(100% + 1rem);
+  position: absolute;
+  top: -0.5rem;
+  left: -0.5rem;
+  background-color: var(--bg-color);
+}
+.container-mask {
+  width: var(--size-container);
+  height: var(--size-container);
+  position: absolute;
+  background-color: #0000002f;
+  border-radius: 50%;
+  scale: 0;
+  transition-duration: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.message {
+  color: #fff;
+}
+.container-img {
+  width: var(--size-container-img);
+  height: var(--size-container-img);
+  position: absolute;
+  overflow: hidden;
+  transition: translate 0.5s;
+}
+.container-img img {
+  position: absolute;
+}
+.container-img:first-child img {
+  top: 0;
+  left: 0;
+}
+.container-img:nth-child(2) img {
+  top: 0;
+  left: -100%;
+}
+.container-img:nth-child(3) img {
+  top: 0;
+  left: -200%;
+}
+.container-img:nth-child(4) img {
+  top: -100%;
+  left: 0;
+}
+.container-img:nth-child(5) img {
+  top: -100%;
+  left: -100%;
+}
+.container-img:nth-child(6) img {
+  top: -100%;
+  left: -200%;
+}
+.container-img:nth-child(7) img {
+  top: -200%;
+  left: 0;
+}
+.container-img:nth-child(8) img {
+  top: -200%;
+  left: -100%;
+}
+.container-img:last-child img {
+  top: -200%;
+  left: -200%;
+}
+.is-active img {
+  filter: grayscale(100%);
+}
+img {
+  position: absolute;
+  object-fit: cover;
+  width: 300%;
+  height: 300%;
+}
