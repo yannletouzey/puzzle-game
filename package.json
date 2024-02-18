@@ -14,5 +14,9 @@
   },
   "dependencies": {
     "vercel": "^33.5.1"
-  }
+  },
+  "homepage": "https://puzzle-game.vercel.app/",
+  "repository": "https://github.com/yannletouzey/puzzle-game",
+  "bugs": "https://github.com/yannletouzey/puzzle-game/issues",
+  "license": "MIT"
 }
