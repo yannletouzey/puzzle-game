@@ -1,13 +1,16 @@
 import handleRandNbr from "./function.js";
 import iceImg from "/ice.png";
+
 const hitBox = document.querySelector("#hitBox");
 let hitNbr = 0;
 hitBox.textContent = hitNbr;
+
 const container = document.querySelector(".container");
-const containerMask = document.querySelector(".container-mask");
-containerMask.style.top = `${container.getBoundingClientRect().top - (document.querySelector("header").getBoundingClientRect().height)}px`;
 let containerX = container.getBoundingClientRect().x;
 let containerY = container.getBoundingClientRect().y;
+
+const containerMask = document.querySelector(".container-mask");
+containerMask.style.top = `${container.getBoundingClientRect().top - (document.querySelector("header").getBoundingClientRect().height)}px`;
 addEventListener("resize", () => {
   containerX = container.getBoundingClientRect().x;
   containerY = container.getBoundingClientRect().y;
@@ -22,32 +25,22 @@ for (let i = 0; i < 9; i++) {
   createContainerImg.appendChild(image);
   container.appendChild(createContainerImg);
 }
+
 const containerImg = document.querySelectorAll(".container-img");
 const sizeContainerImg = containerImg[0].getBoundingClientRect().width;
 
 const randNbr = handleRandNbr(containerImg.length);
 
-const firstPosition = `0px 0px`;
-const secondPosition = `${sizeContainerImg}px 0px`;
-const thirdPosition =  `${sizeContainerImg * 2}px 0px`;
-
-const fourthPosition = `0 ${sizeContainerImg}px`;
-const fifthPosition = `${sizeContainerImg}px ${sizeContainerImg}px`;
-const sixthPosition = `${sizeContainerImg * 2}px ${sizeContainerImg}px`;
-
-const seventhPosition = `0 ${sizeContainerImg * 2}px`;
-const eighthPosition = `${sizeContainerImg}px ${sizeContainerImg * 2}px`;
-const ninethPosition = `${sizeContainerImg * 2}px ${sizeContainerImg * 2}px`;
 const position = [
-  firstPosition, 
-  secondPosition, 
-  thirdPosition, 
-  fourthPosition, 
-  fifthPosition, 
-  sixthPosition, 
-  seventhPosition, 
-  eighthPosition, 
-  ninethPosition
+  `0px 0px`, 
+  `${sizeContainerImg}px 0px`, 
+  `${sizeContainerImg * 2}px 0px`, 
+  `0px ${sizeContainerImg}px`, 
+  `${sizeContainerImg}px ${sizeContainerImg}px`, 
+  `${sizeContainerImg * 2}px ${sizeContainerImg}px`, 
+  `0px ${sizeContainerImg * 2}px`, 
+  `${sizeContainerImg}px ${sizeContainerImg * 2}px`, 
+  `${sizeContainerImg * 2}px ${sizeContainerImg * 2}px`
 ];
 
 const angle = [0, 90, 180, 270];
