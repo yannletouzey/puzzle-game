@@ -4,7 +4,7 @@ import iceImg from "/ice.png";
 const hitBox = document.querySelector("#hitBox");
 let hitNbr = 0;
 hitBox.textContent = hitNbr;
-
+const timerAnimationConfetti = 0;
 const container = document.querySelector(".container");
 let containerX = container.getBoundingClientRect().x;
 let containerY = container.getBoundingClientRect().y;
@@ -289,16 +289,20 @@ for (let index = 0; index < containerImg.length; index++) {
         size.id8.x == 160 && size.id8.y == 320 && (parseInt(size.id8.rot) == 0 || parseInt(size.id8.rot) % 360 == 0) &&
         size.id9.x == 320 && size.id9.y == 320 && (parseInt(size.id9.rot) == 0 || parseInt(size.id9.rot) % 360 == 0)) {
       setTimeout(() => {
-        confetti({
-          particleCount: 500,
-          spread: 360
-        })
+        for (let index = 0; index <= 900; index+=300) {
+          setTimeout(() => {
+            confetti({
+              particleCount: 500,
+              spread: 360
+            })
+          }, index)
+        }
         setTimeout(() => {
           containerMask.style.scale = 1;
           containerMask.style.borderRadius = 0;
           const message = document.createElement("p");
           message.className = "message";
-          message.textContent = "Bravo ! Tu as reussi ! Clique sur le bouton pour rejouer.";
+          message.textContent = "Bravo ! Clique pour rejouer.";
           containerMask.appendChild(message);
         }, 500)
         containerMask.addEventListener("click", () => {
