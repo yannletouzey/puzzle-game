@@ -1,10 +1,10 @@
 import handleRandNbr from "./function.js";
-import iceImg from "/ice.png";
+import puzzleImg from "/0x0.png";
 
 const hitBox = document.querySelector("#hitBox");
 let hitNbr = 0;
 hitBox.textContent = hitNbr;
-const timerAnimationConfetti = 0;
+
 const container = document.querySelector(".container");
 let containerX = container.getBoundingClientRect().x;
 let containerY = container.getBoundingClientRect().y;
@@ -21,7 +21,7 @@ for (let i = 0; i < 9; i++) {
   createContainerImg.className = "container-img";
   createContainerImg.setAttribute("id", (i + 1));
   const image = document.createElement("img");
-  image.src = iceImg;
+  image.src = puzzleImg;
   createContainerImg.appendChild(image);
   container.appendChild(createContainerImg);
 }
@@ -57,7 +57,6 @@ let currentSecondPosition = {
   y: 0,
 }
 
-
 const img1 = document.getElementById("1");
 const img2 = document.getElementById("2");
 const img3 = document.getElementById("3");
@@ -77,6 +76,7 @@ let id6Style = window.getComputedStyle(img6);
 let id7Style = window.getComputedStyle(img7);
 let id8Style = window.getComputedStyle(img8);
 let id9Style = window.getComputedStyle(img9);
+console.log(id1Style);
 
 let size = {
   id1: {
