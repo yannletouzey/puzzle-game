@@ -1,5 +1,5 @@
 import handleRandNbr from "./function.js";
-import puzzleImg from "/0x0.png";
+import puzzleImg from "/ice.png";
 
 const hitBox = document.querySelector("#hitBox");
 let hitNbr = 0;
