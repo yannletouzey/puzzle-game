@@ -144,3 +144,21 @@ img {
   width: 300%;
   height: 300%;
 }
+.description {
+  text-align: center;
+  opacity: 0.6;
+}
+.description.is-active {
+  animation: opacity-text 2s forwards ease-out;
+}
+@keyframes opacity-text {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

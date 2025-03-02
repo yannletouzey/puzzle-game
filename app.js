@@ -1,6 +1,8 @@
 import handleRandNbr from "./function.js";
 import puzzleImg from "/ice.png";
 
+const description = document.querySelector(".description");
+
 const hitBox = document.querySelector("#hitBox");
 let hitNbr = 0;
 hitBox.textContent = hitNbr;
@@ -155,6 +157,10 @@ for (let index = 0; index < containerImg.length; index++) {
 
       hitNbr++;
       hitBox.textContent = hitNbr;
+
+      if (hitNbr >= 3) {
+        description.className = "description is-active";
+      }
 
       size = {
         id1: {
